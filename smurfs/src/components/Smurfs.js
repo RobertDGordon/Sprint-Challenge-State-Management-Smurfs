@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import smurfimg from '../images'
 
 const Smurfs = (props) => {
 
@@ -36,7 +37,7 @@ const Smurfs = (props) => {
 
     return(
             <div className='main'>
-            <div onClick={startEditing}>Edit</div>
+            <img src={smurfimg[props.id]} alt='Smurf' onClick={startEditing} />
             {!isEditing ? ( <>
                             <div className='info'>
                             <div><span>{props.name}</span></div>

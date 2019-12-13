@@ -12,6 +12,10 @@ import styled from 'styled-components';
 
 
 const MainDiv = styled.div`
+  background-image: url('../img/smurfbg.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   position: relative;
