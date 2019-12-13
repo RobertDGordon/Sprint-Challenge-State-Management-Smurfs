@@ -4,12 +4,10 @@ import { getData, postData, deleteData, putData } from '../actions';
 
 import Smurfs from './Smurfs';
 
-
 import "./App.css";
 import AddSmurf from './AddSmurf';
 
 import styled from 'styled-components';
-
 
 const MainDiv = styled.div`
   background-image: url('../img/smurfbg.jpeg');
@@ -22,6 +20,13 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
+  #logo{
+    width: 600px;
+    margin-top: 10px;
+  }
+  form{
+    margin: 15px;
+  }
 `
 
 const SmurfDiv = styled.div`
@@ -29,7 +34,7 @@ const SmurfDiv = styled.div`
     width: 95%;
     flex-wrap: wrap;
     /* position: absolute; */
-    margin-top: 300px;
+    margin-top: 350px;
     justify-content: center;
 `
 
@@ -66,6 +71,7 @@ function App(){
 
   return(
     <MainDiv>
+      <img id='logo' src='../img/smurflogo.png' alt='Smurfs Logo' />
       <AddSmurf postSmurf={postSmurf} />
       <button onClick={() => dispatch(getData())}>Smurf it up!</button>
       <SmurfDiv>
