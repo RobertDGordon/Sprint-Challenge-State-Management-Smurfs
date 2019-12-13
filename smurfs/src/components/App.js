@@ -6,6 +6,7 @@ import Smurfs from './Smurfs';
 
 
 import "./App.css";
+import AddSmurf from './AddSmurf';
 
 import styled from 'styled-components';
 
@@ -46,6 +47,7 @@ function App(){
 
   return(
     <MainDiv>
+      <AddSmurf />
       <button onClick={() => dispatch(getData())}>Smurf it up!</button>
       <SmurfDiv>
       {dataLoaded ? (
