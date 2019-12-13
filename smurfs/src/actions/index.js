@@ -15,10 +15,18 @@ export const getData = () => dispatch => {
       .then(res => dispatch({type: DATA_LOAD_SUCCESS, payload: res.data}))
       .catch(err => console.log(err))
     };
-    
+
 export const postData = (payload) => dispatch => {
     dispatch({type: DATA_POST_START});
     axios.post('http://localhost:3333/smurfs', payload)
+    .then(res => dispatch(getData()))
+    .catch(err => console.log(err))
+    }
+    
+export const deleteData = (id) => dispatch => {
+    dispatch({type: DATA_POST_START});
+    console.log('deleting', id)
+    axios.delete(`http://localhost:3333/smurfs/${id}`)
     .then(res => dispatch(getData()))
     .catch(err => console.log(err))
     }
