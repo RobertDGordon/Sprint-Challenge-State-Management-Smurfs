@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
-import { getData } from '../actions';
+import { getData, postData } from '../actions';
 
 import Smurfs from './Smurfs';
 
@@ -43,11 +43,16 @@ function App(){
     shallowEqual
   );
 
+  const postSmurf = (newSmurf) =>{
+    console.log('to add', newSmurf)
+    dispatch(postData(newSmurf))
+  }
+
   // console.log(data.name)
 
   return(
     <MainDiv>
-      <AddSmurf />
+      <AddSmurf postSmurf={postSmurf} />
       <button onClick={() => dispatch(getData())}>Smurf it up!</button>
       <SmurfDiv>
       {dataLoaded ? (

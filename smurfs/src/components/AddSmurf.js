@@ -17,7 +17,8 @@ const AddSmurf = (props) => {
 
     const addSmurf = e => {
         e.preventDefault();
-        console.log('add smurf!', newSmurf)
+        // console.log('add smurf!', newSmurf)
+        props.postSmurf(newSmurf)
         setNewSmurf({name: '',
         age: '',
         height: '',
