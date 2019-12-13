@@ -22,11 +22,19 @@ export const postData = (payload) => dispatch => {
     .then(res => dispatch(getData()))
     .catch(err => console.log(err))
     }
-    
+
 export const deleteData = (id) => dispatch => {
     dispatch({type: DATA_POST_START});
     console.log('deleting', id)
     axios.delete(`http://localhost:3333/smurfs/${id}`)
+    .then(res => dispatch(getData()))
+    .catch(err => console.log(err))
+    }
+
+export const putData = (payload) => dispatch => {
+    dispatch({type: DATA_POST_START});
+    console.log('putting', payload.id)
+    axios.put(`http://localhost:3333/smurfs/${payload.id}`, payload)
     .then(res => dispatch(getData()))
     .catch(err => console.log(err))
     }

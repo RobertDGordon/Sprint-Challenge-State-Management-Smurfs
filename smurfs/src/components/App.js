@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
-import { getData, postData, deleteData } from '../actions';
+import { getData, postData, deleteData, putData } from '../actions';
 
 import Smurfs from './Smurfs';
 
@@ -53,6 +53,11 @@ function App(){
     dispatch(deleteData(smurfId))
   }
 
+  const putSmurf = (newSmurf) =>{
+    // console.log(smurfId)
+    dispatch(putData(newSmurf))
+  }
+
   // console.log(data.name)
 
   return(
@@ -62,7 +67,7 @@ function App(){
       <SmurfDiv>
       {dataLoaded ? (
             <>
-            {data.map(smurf => <Smurfs key={smurf.id} {...smurf} deleteSmurf={deleteSmurf}/>)}
+            {data.map(smurf => <Smurfs key={smurf.id} {...smurf} deleteSmurf={deleteSmurf} putSmurf={putSmurf}/>)}
             </>
       ) : (
             <>
